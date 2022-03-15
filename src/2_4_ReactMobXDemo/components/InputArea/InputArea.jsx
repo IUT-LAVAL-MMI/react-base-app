@@ -1,4 +1,5 @@
 import React, { useRef, useContext } from 'react';
+// import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import RootStore from '../../RootStore';
 

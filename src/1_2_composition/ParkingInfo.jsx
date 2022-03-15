@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ParkingInfo({ name, location }) {
   return (
@@ -12,5 +12,10 @@ function ParkingInfo({ name, location }) {
     </h3>
   );
 }
+
+ParkingInfo.propTypes = {
+  name: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+};
 
 export default ParkingInfo;

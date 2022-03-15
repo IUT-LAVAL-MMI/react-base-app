@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+// import PropTypes from 'prop-types';
 import ComposantEnfant from './DelaiConditionnel';
 
 // Juste pour pouvoir provoquer les re-rendu du composant enfant puis le démonter

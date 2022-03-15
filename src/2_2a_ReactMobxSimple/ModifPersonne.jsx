@@ -1,6 +1,6 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 
 function ModifPersonne({ personne }) {
@@ -25,5 +25,12 @@ function ModifPersonne({ personne }) {
     </div>
   );
 }
+
+ModifPersonne.propTypes = {
+  personne: PropTypes.shape({
+    prenom: PropTypes.string,
+    nom: PropTypes.string,
+  }).isRequired,
+};
 
 export default observer(ModifPersonne);

@@ -1,5 +1,6 @@
-/* eslint-disable no-console, react/prop-types */
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export function DelaiConditionnel({ indicateur }) {
   console.log('(re-)Rendu du composant...');
@@ -30,5 +31,12 @@ export function DelaiConditionnel({ indicateur }) {
     </h3>
   );
 }
+
+DelaiConditionnel.propTypes = {
+  indicateur: PropTypes.PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool]).isRequired,
+};
 
 export default DelaiConditionnel;

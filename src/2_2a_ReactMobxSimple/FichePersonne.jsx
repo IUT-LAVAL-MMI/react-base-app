@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 
 function FichePersonne({ personne }) {
@@ -7,18 +7,25 @@ function FichePersonne({ personne }) {
     <>
       <div>
         <span>
-          Prenom:
+          Prenom:&nbsp;
           {personne.prenom}
         </span>
       </div>
       <div>
         <span>
-          Nom:
+          Nom:&nbsp;
           {personne.nom}
         </span>
       </div>
     </>
   );
 }
+
+FichePersonne.propTypes = {
+  personne: PropTypes.shape({
+    prenom: PropTypes.string,
+    nom: PropTypes.string,
+  }).isRequired,
+};
 
 export default observer(FichePersonne);

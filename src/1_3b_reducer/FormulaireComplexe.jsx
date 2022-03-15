@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useReducer } from 'react';
+import PropTypes from 'prop-types';
 
 function initInfoRectangleState({ longueurInit, largeurInit }) {
   return {
@@ -106,5 +106,10 @@ function ControlInputParState({ longueurInit, largeurInit }) {
     </>
   );
 }
+
+ControlInputParState.propTypes = {
+  longueurInit: PropTypes.number.isRequired,
+  largeurInit: PropTypes.number.isRequired,
+};
 
 export default ControlInputParState;

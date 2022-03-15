@@ -1,4 +1,5 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 import ColorContext from './ColorContext';
 import Menu from './Menu';
 
