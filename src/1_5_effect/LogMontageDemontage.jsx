@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-export function LogMontageDemontage() {
+function LogMontageDemontage() {
+  const [cpt, setCpt] = useState(0);
   console.log('(re-)Rendu du composant...');
 
   useEffect(() => {
@@ -12,8 +13,29 @@ export function LogMontageDemontage() {
   }, []);
 
   return (
-    <h3>Log Montage / Démontage !</h3>
+    <>
+      <h3>Log Montage / Démontage !</h3>
+      <div>
+        Compteur:&nbsp;
+        {cpt}
+      </div>
+      <button type="button" onClick={() => setCpt(cpt + 1)}>Incrémenter le compteur</button>
+    </>
+
   );
 }
 
-export default LogMontageDemontage;
+function LogParent() {
+  const [showLog, setshowLog] = useState(false);
+
+  const msg = showLog ? 'Masquer' : 'Afficher';
+
+  return (
+    <>
+      <button type="button" onClick={() => setshowLog(!showLog)}>{msg}</button>
+      {showLog && (<LogMontageDemontage />)}
+    </>
+  );
+}
+
+export default LogParent;

@@ -91,15 +91,17 @@ function ControlInputParState({ longueurInit, largeurInit }) {
       </button>
       <div>
         <span>
-          Longueur:
+          Longueur:&nbsp;
           {state.longueur}
         </span>
+        &nbsp;
         <span>
-          largeur:
+          largeur:&nbsp;
           {state.largeur}
         </span>
+        &nbsp;
         <span>
-          Surface:
+          Surface:&nbsp;
           {state.surface}
         </span>
       </div>

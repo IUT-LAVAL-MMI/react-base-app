@@ -5,8 +5,9 @@ function Voiture({ name, color }) {
   return (
     <div>
       <span className="bold">{name}</span>
+      &nbsp;
       <span className="small">
-        Couleur:
+        Couleur:&nbsp;
         {color}
       </span>
     </div>
