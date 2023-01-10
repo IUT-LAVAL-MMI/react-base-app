@@ -192,13 +192,8 @@ module.exports = {
   // Whether to use watchman for file crawling
   // watchman: true,
   // Custom configuration
-  snapshotSerializers: [
-    "enzyme-to-json/serializer",
-  ],
   moduleNameMapper: {
     "\\.(css|sass|scss)$": "identity-obj-proxy",
   },
-  setupFiles: [
-    "./src/.setupEnzymeTests.js",
-  ],
+  setupFilesAfterEnv: ['./src/jest-setup.js']
 };

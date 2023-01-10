@@ -1,13 +1,14 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path'); // module node de manipulation de chemins de fichiers
 const fs = require('fs'); // module node d'accès au SGF
+const webpack = require('webpack'); // webpack
+// const CopyWebpackPlugin = require('copy-webpack-plugin'); // Plugin de copie directe de fichiers
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Plugin de création HTML
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const packageInfo = require('./package.json'); // info générale de l'app
 const babelConfig = require('./babel.config'); // Info de config de babel
-const webpack = require('webpack'); // webpack
-const CopyWebpackPlugin = require('copy-webpack-plugin'); // Plugin de copie directe de fichiers
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Plugin de création HTML
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const PUBLIC_PATH = '/'; // url de base de l'appli
 

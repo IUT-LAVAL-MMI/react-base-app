@@ -1,9 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path'); // module node de manipulation de chemins de fichiers
+const webpack = require('webpack'); // webpack
+//const CopyWebpackPlugin = require('copy-webpack-plugin'); // Plugin de copie directe de fichiers
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Plugin de création HTML
 const packageInfo = require('./package.json'); // info générale de l'app
 const babelConfig = require('./babel.config'); // Info de config de babel
-const webpack = require('webpack'); // webpack
-const CopyWebpackPlugin = require('copy-webpack-plugin'); // Plugin de copie directe de fichiers
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Plugin de création HTML
 
 const PUBLIC_PATH = '/'; // url de base de l'appli
 

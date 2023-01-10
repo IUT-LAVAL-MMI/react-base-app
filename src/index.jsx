@@ -1,7 +1,9 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 
 // import './bootstrap-config.scss';
 
-render(<App />, document.getElementById('appMountPoint'));
+const root = createRoot(document.getElementById('appMountPoint'));
+
+root.render(<App />);
