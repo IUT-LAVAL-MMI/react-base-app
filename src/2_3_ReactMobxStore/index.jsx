@@ -1,12 +1,13 @@
 import React from 'react';
 import { action } from 'mobx';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import FichePersonneContainer from './FichePersonneContainer';
 import ModifPersonne from './ModifPersonne';
 import RootStore from './RootStore';
 import STORE from './store';
 
-render(
+const root = createRoot(document.getElementById('appMountPoint'));
+root.render(
   <RootStore.Provider value={STORE}>
     <div>
       <FichePersonneContainer />
@@ -15,7 +16,6 @@ render(
       <ModifPersonne />
     </div>
   </RootStore.Provider>,
-  document.getElementById('appMountPoint'),
 );
 
 setTimeout(action(() => {

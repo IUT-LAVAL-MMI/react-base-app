@@ -1,13 +1,14 @@
 import React from 'react';
 import { action } from 'mobx';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Personne from './Personne';
 import FichePersonne from './FichePersonne';
 import ModifPersonne from './ModifPersonne';
 
 const p1 = new Personne('Élise', 'Lavoué');
 
-render(
+const root = createRoot(document.getElementById('appMountPoint'));
+root.render(
   <>
     <div>
       <FichePersonne personne={p1} />
@@ -16,7 +17,6 @@ render(
       <ModifPersonne personne={p1} />
     </div>
   </>,
-  document.getElementById('appMountPoint'),
 );
 
 setTimeout(action(() => {
