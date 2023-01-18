@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { observer } from 'mobx-react';
+import { observer, PropTypes as MobxPT } from 'mobx-react';
 
 function computeTextStyle(color, bold) {
   return {
@@ -20,11 +20,7 @@ function Text({ todo, onCloseClick }) {
 }
 
 Text.propTypes = {
-  todo: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    bold: PropTypes.bool.isRequired,
-  }).isRequired,
+  todo: MobxPT.observableObject.isRequired,
   onCloseClick: PropTypes.func.isRequired,
 };
 

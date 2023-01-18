@@ -55,3 +55,5 @@ root.render(<Composant11 message="Coucou" />);
 // import './2_3_ReactMobxStore/index';
 
 // import './2_4_ReactMobXDemo/index';
+
+// import './2_5_ReactMobxPropTypes/index';
