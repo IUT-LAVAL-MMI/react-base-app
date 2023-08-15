@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path'); // module node de manipulation de chemins de fichiers
 const webpack = require('webpack'); // webpack
-//const CopyWebpackPlugin = require('copy-webpack-plugin'); // Plugin de copie directe de fichiers
+// const CopyWebpackPlugin = require('copy-webpack-plugin'); // Plugin de copie directe de fichiers
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // Plugin de création HTML
 const packageInfo = require('./package.json'); // info générale de l'app
 const babelConfig = require('./babel.config'); // Info de config de babel
@@ -16,7 +16,7 @@ module.exports = {
   entry: './src/index.jsx',
   // Sortie
   output: {
-    path: path.join(__dirname, 'build'), //chemin obligatoirement absolu
+    path: path.join(__dirname, 'build'), // chemin obligatoirement absolu
     filename: '[name].bundle.js',
     publicPath: PUBLIC_PATH,
     clean: true, // efface le contenu du dossier de sortie avant regénération
@@ -43,7 +43,7 @@ module.exports = {
         description: packageInfo?.description ?? 'no description',
         keywords: packageInfo?.keywords?.join(', ') ?? '',
         author: packageInfo?.author ?? 'unknown',
-      }
+      },
     }),
   ],
   // définit comment les modules vont être chargés
@@ -84,32 +84,40 @@ module.exports = {
     }, {
       // Gestion des fichiers images
       test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      type: 'asset/resource', //le module asset émet un fichier séparé du bundle et exporte son url
+      type: 'asset/resource', // le module asset émet un fichier séparé du bundle et exporte son url
     }, {
       // Gestion des polices d'écriture
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
-      type: 'asset/resource', //le module asset émet un fichier séparé du bundle et exporte son url
+      type: 'asset/resource', // le module asset émet un fichier séparé du bundle et exporte son url
     }, {
       // Gestion du code-source js et jsx en utilisant babel pour
       // la transpilation
       // Exclut les fichiers js de node_modules du passage par babel
-      test: /\.js|.jsx?$/,
+      test: /\.js|\.jsx?$/,
       exclude: /(node_modules)/,
       use: {
         loader: 'babel-loader',
         options: babelConfig, // configuration séparé car ré-utilisé avec eslint
       },
-    },]
+    }],
   },
   devtool: 'inline-source-map',
   devServer: {
     port: 3000,
-    host: 'local-ip', // Accessible uniquement d'une ip localhost (4 ou 6)
-    historyApiFallback: true, // Evite d'afficher une page 404 plutot que la page index.html quand on utilie HTML5 History API
+    host: 'localhost', // Accessible uniquement d'une ip localhost (4 ou 6)
+    historyApiFallback: true, // Evite d'afficher une page 404 plutot que la page index.html
+    // quand on utilie HTML5 History API
     static: {
-      directory: path.resolve(__dirname, "build"),
+      directory: path.resolve(__dirname, 'build'),
     },
     open: true, // tente d'ouvre une page navigateur une fois le serveur lancé
     hot: true, // active le remplacement à chaud des modules
+    client: { // n'affiche sur le navigateur en overlay que les erreurs
+      overlay: {
+        errors: true,
+        warnings: false,
+        runtimeErrors: true,
+      },
+    },
   },
 };
