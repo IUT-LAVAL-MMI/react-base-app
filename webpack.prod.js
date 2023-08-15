@@ -20,7 +20,7 @@ module.exports = {
   entry: './src/index.jsx',
   // Sortie
   output: {
-    path: path.join(__dirname, 'build'), //chemin obligatoirement absolu
+    path: path.join(__dirname, 'build'), // chemin obligatoirement absolu
     filename: '[name].[contenthash].bundle.js', // Ajout un hash pour s'assurer le telechargement du nouveau code produit par le navigateur
     publicPath: PUBLIC_PATH,
     clean: true, // efface le contenu du dossier de sortie avant regénération
@@ -47,7 +47,7 @@ module.exports = {
         description: packageInfo?.description ?? 'no description',
         keywords: packageInfo?.keywords?.join(', ') ?? '',
         author: packageInfo?.author ?? 'unknown',
-      }
+      },
     }),
     // Séparation des CSS du code JS dans des fichiers séparés
     new MiniCssExtractPlugin({
@@ -101,22 +101,22 @@ module.exports = {
     }, {
       // Gestion des fichiers images
       test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      type: 'asset/resource', //le module asset émet un fichier séparé du bundle et exporte son url
+      type: 'asset/resource', // le module asset émet un fichier séparé du bundle et exporte son url
     }, {
       // Gestion des polices d'écriture
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
-      type: 'asset/resource', //le module asset émet un fichier séparé du bundle et exporte son url
+      type: 'asset/resource', // le module asset émet un fichier séparé du bundle et exporte son url
     }, {
       // Gestion du code-source js et jsx en utilisant babel pour
       // la transpilation
       // Exclut les fichiers js de node_modules du passage par babel
-      test: /\.js|.jsx?$/,
+      test: /\.js|\.jsx?$/,
       exclude: /(node_modules)/,
       use: {
         loader: 'babel-loader',
         options: babelConfig, // configuration séparé car ré-utilisé avec eslint
       },
-    },]
+    }],
   },
   optimization: {
     moduleIds: 'deterministic', // les ids de modules sont calculés de manière à ne pas changer sur le module ne change pas
@@ -131,8 +131,8 @@ module.exports = {
       },
     },
     minimizer: [
-      '...', //utilise les paramètres par défaut des minimzer (TerserPlugin pour minifier et minimiser JS)
-      new CssMinimizerPlugin(), //minimise CSS
+      '...', // utilise les paramètres par défaut des minimzer (TerserPlugin pour minifier et minimiser JS)
+      new CssMinimizerPlugin(), // minimise CSS
     ],
   },
   devtool: 'source-map', // genere des source map pour la prod

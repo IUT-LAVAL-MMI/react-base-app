@@ -21,14 +21,14 @@ const root = createRoot(document.getElementById('appMountPoint'));
 
 root.render(<Composant11 message="Coucou" />);
 
-/* root.render(<Composant12
-  nom="Parking Tours"
-  adresse="rue Nationale"
-  voitures={[
-    { id: 'v1', nom: 'pigeot 207', color: 'red' },
-    { id: 'v2', nom: 'renault xantia', color: 'green' },
-  ]}
-/>); */
+// root.render(<Composant12
+//   nom="Parking Tours"
+//   adresse="rue Nationale"
+//   voitures={[
+//     { id: 'v1', nom: 'pigeot 207', color: 'red' },
+//     { id: 'v2', nom: 'renault xantia', color: 'green' },
+//   ]}
+// />);
 
 // root.render(<Composant13a1 />);
 
