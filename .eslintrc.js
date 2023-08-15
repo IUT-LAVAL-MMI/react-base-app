@@ -23,8 +23,9 @@ module.exports = {
   },
   rules: {
     'no-console': ['error', {
-      allow: ['warn', 'error']
+      allow: ['warn', 'error'],
     }],
     'no-underscore-dangle': 'off',
+    // 'react/prop-types': 'off',
   },
 };
