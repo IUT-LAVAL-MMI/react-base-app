@@ -10,7 +10,7 @@ function Welcome() {
       <Col xs={12} sm={8} md={6} lg={6} xl={4}>
         <h1>
           Bienvenue dans cette application de base &lsquo;
-          {APP_ENV.APP_TITLE}
+          {APP_ENV_APP_TITLE}
           &rsquo; !
         </h1>
         <Alert variant="info">

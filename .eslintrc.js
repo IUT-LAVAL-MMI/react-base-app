@@ -18,7 +18,8 @@ module.exports = {
     'jest',
   ],
   globals: {
-    APP_ENV: 'readonly',
+    APP_ENV_APP_PUBLIC_PATH: 'readonly',
+    APP_ENV_APP_TITLE: 'readonly',
     fetchMock: 'readonly',
   },
   rules: {

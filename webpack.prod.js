@@ -29,8 +29,8 @@ module.exports = {
   plugins: [
     // Définition de variables d'environnement injectable dans le code-source
     new webpack.DefinePlugin({
-      'APP_ENV.APP_PUBLIC_PATH': JSON.stringify(PUBLIC_PATH),
-      'APP_ENV.APP_TITLE': JSON.stringify(packageInfo.appTitle),
+      APP_ENV_APP_PUBLIC_PATH: JSON.stringify(PUBLIC_PATH),
+      APP_ENV_APP_TITLE: JSON.stringify(packageInfo.appTitle),
     }),
     // Copie directe de fichiers
     // new CopyWebpackPlugin({

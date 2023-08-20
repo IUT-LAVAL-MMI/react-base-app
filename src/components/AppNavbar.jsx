@@ -14,10 +14,10 @@ function AppNavbar() {
           width="30"
           height="30"
           className="d-inline-block align-top"
-          alt={`${APP_ENV.APP_TITLE} Logo`}
+          alt={`${APP_ENV_APP_TITLE} Logo`}
         />
         {' '}
-        {APP_ENV.APP_TITLE}
+        {APP_ENV_APP_TITLE}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="AppNavbar" />
       <Navbar.Collapse id="AppNavbar">
