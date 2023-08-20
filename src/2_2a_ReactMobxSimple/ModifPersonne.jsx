@@ -6,17 +6,19 @@ import { observer } from 'mobx-react';
 function ModifPersonne({ personne }) {
   return (
     <div>
-      <label>
+      <label htmlFor="modifPersonneNom">
         Nom :
         <input
+          id="modifPersonneNom"
           type="text"
           value={personne.nom}
           onChange={(evt) => { personne.nom = evt.target.value; }}
         />
       </label>
-      <label>
+      <label htmlFor="modifPersonnePrenom">
         Prénom :
         <input
+          id="modifPersonnePrenom"
           type="text"
           value={personne.prenom}
           onChange={(evt) => { personne.prenom = evt.target.value; }}

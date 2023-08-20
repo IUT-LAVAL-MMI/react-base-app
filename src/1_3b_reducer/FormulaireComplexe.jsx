@@ -52,31 +52,40 @@ function ControlInputParState({ longueurInit, largeurInit }) {
 
   return (
     <>
-      <label htmlFor="inputColor">Couleur</label>
-      <input
-        id="inputColor"
-        type="color"
-        value={state.color}
-        onChange={(event) => { dispatch({ type: 'set-color', value: event.target.value }); }}
-      />
-      <label htmlFor="inputLongueur">Longueur</label>
-      <input
-        id="inputLongueur"
-        type="number"
-        step="0.01"
-        placeholder="1.0"
-        value={state.longueur}
-        onChange={(event) => { dispatch({ type: 'set-longueur', value: event.target.value }); }}
-      />
-      <label htmlFor="inputLargeurr">Longueur</label>
-      <input
-        id="inputLargeurr"
-        type="number"
-        step="0.01"
-        placeholder="1.0"
-        value={state.largeur}
-        onChange={(event) => { dispatch({ type: 'set-largeur', value: event.target.value }); }}
-      />
+      <label htmlFor="inputColor">
+        Couleur
+        <input
+          id="inputColor"
+          type="color"
+          value={state.color}
+          onChange={(event) => { dispatch({ type: 'set-color', value: event.target.value }); }}
+        />
+      </label>
+
+      <label htmlFor="inputLongueur">
+        Longueur
+        <input
+          id="inputLongueur"
+          type="number"
+          step="0.01"
+          placeholder="1.0"
+          value={state.longueur}
+          onChange={(event) => { dispatch({ type: 'set-longueur', value: event.target.value }); }}
+        />
+      </label>
+
+      <label htmlFor="inputLargeur">
+        Largeur
+        <input
+          id="inputLargeur"
+          type="number"
+          step="0.01"
+          placeholder="1.0"
+          value={state.largeur}
+          onChange={(event) => { dispatch({ type: 'set-largeur', value: event.target.value }); }}
+        />
+      </label>
+
       <button
         type="button"
         onClick={() => { dispatch({ type: 'double-surface' }); }}
