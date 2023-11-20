@@ -2,31 +2,42 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'jest/globals': true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
-  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   plugins: [
     'react',
-    'jest',
+  ],
+  extends: [
+    'airbnb',
+    'plugin:react/recommended',
   ],
   globals: {
     APP_ENV_APP_PUBLIC_PATH: 'readonly',
     APP_ENV_APP_TITLE: 'readonly',
-    fetchMock: 'readonly',
   },
   rules: {
     'no-console': ['error', {
       allow: ['warn', 'error'],
     }],
     'no-underscore-dangle': 'off',
-    // 'react/prop-types': 'off',
   },
+  overrides: [
+    {
+      files: ['*.test.*'],
+      env: {
+        'jest/globals': true,
+      },
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
+      globals: {
+        fetchMock: 'readonly',
+      },
+    },
+  ],
 };
