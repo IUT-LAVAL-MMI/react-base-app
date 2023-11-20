@@ -74,7 +74,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  basename: APP_ENV_APP_PUBLIC_PATH,
+});
 
 function App() {
   return (
